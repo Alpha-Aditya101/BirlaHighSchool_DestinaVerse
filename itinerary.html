@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A curated one-day visitor itinerary through Suryapur.">
+  <title>Itinerary — Suryapur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a class="logo" href="index.html">Sury<span>a</span>pur</a>
+      <button class="menu" id="menuButton" aria-expanded="false">Menu ☰</button>
+      <div class="links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="visit.html">Visit</a>
+        <a href="community.html">Community</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="itinerary.html">Itinerary</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4dce65?w=1200&q=80" alt="A route through Suryapur" title="Photo: Luca Bravo / Unsplash">
+      <div class="container">
+        <span class="eyebrow">Visitor itinerary</span>
+        <h1>The Suryapur<br>Explorer's Day.</h1>
+        <p>A practical cultural day from the Sun Gate at opening time to the riverfront after sunset.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow">Interactive mini map</span>
+          <h2>A curated route through Suryapur.</h2>
+          <p>Use the map to preview three timed routes built around the city's landmarks, craft district and riverfront.</p>
+        </div>
+        <div class="itinerary-layout">
+          <div class="itinerary-list reveal">
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="1" data-pad="2">01</span> · <span class="count-up" data-count="2.4" data-decimals="1">2.4</span> km · 08:00–12:00</span>
+              <h3>Heritage Morning</h3>
+              <p>08:00 — Sun Gate Temple<br>09:30 — Old Town Archive Lane<br>11:00 — Riverwatch Ghat</p>
+              <button class="itinerary-button active-route" data-route="heritage">View heritage route →</button>
+            </article>
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="2" data-pad="2">02</span> · <span class="count-up" data-count="3.1" data-decimals="1">3.1</span> km · 11:30–16:00</span>
+              <h3>Craft &amp; Culture</h3>
+              <p>11:30 — Merchant's Courtyard<br>13:00 — Weavers' Lane lunch stop<br>15:00 — Night Market workshops</p>
+              <button class="itinerary-button" data-route="craft">View craft route →</button>
+            </article>
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="3" data-pad="2">03</span> · <span class="count-up" data-count="1.8" data-decimals="1">1.8</span> km · 17:30–20:00</span>
+              <h3>River at Dusk</h3>
+              <p>17:30 — Riverwatch Ghat<br>18:30 — Lantern Bridge viewpoint<br>19:30 — City Theatre programme</p>
+              <button class="itinerary-button" data-route="river">View river route →</button>
+            </article>
+          </div>
+          <div class="mini-map reveal" data-route="heritage" aria-label="A simple 2D map of Suryapur">
+            <div class="map-block block-one"></div>
+            <div class="map-block block-two"></div>
+            <div class="map-block block-three"></div>
+            <div class="map-river"></div>
+            <div class="map-road road-one"></div>
+            <div class="map-road road-two"></div>
+            <div class="map-road road-three"></div>
+            <div class="map-route"></div>
+            <i class="map-point point-gate"><span>Sun Gate</span></i>
+            <i class="map-point point-court"><span>Courtyard</span></i>
+            <i class="map-point point-ghat"><span>Riverwatch</span></i>
+            <i class="map-point point-market"><span>Night Market</span></i>
+            <i class="map-point point-theatre"><span>Theatre</span></i>
+            <div class="map-legend">
+              <span><i></i>Landmark</span>
+              <span><i class="river"></i>River</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container split reveal">
+        <div>
+          <span class="eyebrow">Plan with confidence</span>
+          <h2>One day, paced around the city.</h2>
+        </div>
+        <div>
+          <p>Arrive before 08:00 for the quieter Sun Gate ceremony, take lunch in the Craft Quarter between 13:00 and 14:00, and reach the riverfront before 18:30 to catch the lanterns coming on. Wear comfortable shoes: the full route covers about <span class="count-up" data-count="7.3" data-decimals="1">7.3</span> kilometres.</p>
+          <div class="facts">
+            <div><strong class="count-up" data-count="3">3</strong><span>Timed routes</span></div>
+            <div><strong class="count-up" data-count="8">8</strong><span>Key stops</span></div>
+            <div><strong class="count-up" data-count="7.3" data-decimals="1">7.3</strong><span>Kilometres total</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta reveal">
+        <span class="eyebrow">Visitor essentials</span>
+        <h2>Start at Sun Gate. End by the river.</h2>
+        <p>The route begins at the Old Town entrance, includes the Merchant's Courtyard for lunch, and ends at Riverwatch Ghat beside the evening lanterns.</p>
+        <div class="buttons" style="justify-content:center">
+          <a class="button primary" href="heritage.html">Read landmark stories →</a>
+          <a class="button secondary" href="visit.html">See all visitor routes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <span>© 2026 Suryapur Digital Museum &amp; City Portal</span>
+      <span><a href="mailto:hello.suryapur.city@gmail.com">hello.suryapur.city@gmail.com</a> · <a href="visit.html">Visit guide</a> · <a href="gallery.html">Gallery</a></span>
+      <p class="photo-credits">Photo by <a href="https://unsplash.com/@lucabravo" rel="noopener">Luca Bravo</a> — via <a href="https://unsplash.com/license" rel="noopener">Unsplash</a> (free to use).</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
