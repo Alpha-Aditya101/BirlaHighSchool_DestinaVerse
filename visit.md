@@ -12,7 +12,7 @@ hero_description: "Choose a route for an hour, a day or a weekend of discovery."
 # --- SUGGESTED ROUTES ---
 routes_eyebrow: "Suggested routes"
 routes_title: "Start somewhere beautiful."
-routes_desc: "Each route is easy to customise. Replace the text with real places, timings and distances."
+routes_desc: "Each route is easy to customise."
 
 route_1_num: "01"
 route_1_title: "Heritage Walk"
