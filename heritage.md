@@ -12,7 +12,7 @@ hero_description: "Meet the buildings, traditions and riverside spaces that shap
 # --- FEATURED PLACES ---
 featured_eyebrow: "Featured places"
 featured_title: "Every corner holds a memory."
-featured_desc: "Click any card later to link it to a detailed story, video or archive page."
+featured_desc: "Each card depicts individual stories."
 
 card_1_tag: "1721 · Landmark"
 card_1_title: "Sun Gate Temple"
