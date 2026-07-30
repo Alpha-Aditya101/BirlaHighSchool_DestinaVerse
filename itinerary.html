@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A curated one-day visitor itinerary through Suryapur.">
+  <title>Itinerary — Suryapur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a class="logo" href="index.html">Sury<span>a</span>pur</a>
+      <button class="menu" id="menuButton" aria-expanded="false">Menu ☰</button>
+      <div class="links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="visit.html">Visit</a>
+        <a href="community.html">Community</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="itinerary.html">Itinerary</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4dce65?w=1200&q=80" alt="A route through Suryapur" title="Photo: Luca Bravo / Unsplash">
+      <div class="container">
+        <span class="eyebrow" data-md="hero_eyebrow">Visitor itinerary</span>
+        <h1 data-md="hero_title">The Suryapur<br>Explorer's Day.</h1>
+        <p data-md="hero_description">A practical cultural day from the Sun Gate at opening time to the riverfront after sunset.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow" data-md="map_eyebrow">Interactive mini map</span>
+          <h2 data-md="map_title">A curated route through Suryapur.</h2>
+          <p data-md="map_desc">Use the map to preview three timed routes built around the city's landmarks, craft district and riverfront.</p>
+        </div>
+        <div class="itinerary-layout">
+          <div class="itinerary-list reveal">
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="1" data-pad="2">01</span> · <span class="count-up" data-count="2.4" data-decimals="1">2.4</span> km · 08:00–12:00</span>
+              <h3 data-md="route_1_title">Heritage Morning</h3>
+              <p data-md="route_1_desc">08:00 — Sun Gate Temple<br>09:30 — Old Town Archive Lane<br>11:00 — Riverwatch Ghat</p>
+              <button class="itinerary-button active-route" data-route="heritage" data-md="route_1_btn">View heritage route →</button>
+            </article>
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="2" data-pad="2">02</span> · <span class="count-up" data-count="3.1" data-decimals="1">3.1</span> km · 11:30–16:00</span>
+              <h3 data-md="route_2_title">Craft &amp; Culture</h3>
+              <p data-md="route_2_desc">11:30 — Merchant's Courtyard<br>13:00 — Weavers' Lane lunch stop<br>15:00 — Night Market workshops</p>
+              <button class="itinerary-button" data-route="craft" data-md="route_2_btn">View craft route →</button>
+            </article>
+            <article class="itinerary-card">
+              <span class="tag">Route <span class="count-up" data-count="3" data-pad="2">03</span> · <span class="count-up" data-count="1.8" data-decimals="1">1.8</span> km · 17:30–20:00</span>
+              <h3 data-md="route_3_title">River at Dusk</h3>
+              <p data-md="route_3_desc">17:30 — Riverwatch Ghat<br>18:30 — Lantern Bridge viewpoint<br>19:30 — City Theatre programme</p>
+              <button class="itinerary-button" data-route="river" data-md="route_3_btn">View river route →</button>
+            </article>
+          </div>
+          <div class="mini-map-wrapper reveal">
+            <div class="mini-map" id="cityMap" data-route="heritage" aria-label="Interactive Map of Suryapur">
+              <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" class="map-svg">
+                <defs>
+                  <linearGradient id="riverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
+                    <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.45" />
+                  </linearGradient>
+                  <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#c9a24b" />
+                    <stop offset="100%" stop-color="#5eead4" />
+                  </linearGradient>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- City Districts -->
+                <path class="district" d="M 40,40 L 260,40 L 240,200 L 40,180 Z" fill="#172231" opacity="0.6" stroke="#c9a24b" stroke-opacity="0.25" />
+                <path class="district" d="M 280,40 L 540,40 L 520,220 L 260,200 Z" fill="#172231" opacity="0.4" stroke="#5eead4" stroke-opacity="0.25" />
+                <path class="district" d="M 40,220 L 540,220 L 560,360 L 40,360 Z" fill="#0f172a" opacity="0.8" stroke="#38bdf8" stroke-opacity="0.25" />
+
+                <!-- River -->
+                <path class="river-path" d="M 0,270 C 150,250 300,310 600,280 L 600,350 C 300,380 150,320 0,340 Z" fill="url(#riverGrad)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+                <text x="440" y="325" fill="#38bdf8" font-size="10" font-weight="700" opacity="0.6" letter-spacing="2">SURYAPUR RIVER</text>
+
+                <!-- Roads / Pathways -->
+                <path class="road" d="M 90,100 L 210,100 L 210,290 L 360,295 L 500,305" stroke="rgba(237, 233, 222, 0.14)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <path class="road" d="M 260,80 L 440,100 L 440,220" stroke="rgba(237, 233, 222, 0.14)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Active Animated Route Line -->
+                <path id="activeRoutePath" class="active-route-path" d="M 90,100 L 210,100 L 210,290" stroke="url(#routeGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)" />
+
+                <!-- Route 1 Pins (Heritage) -->
+                <g class="map-pin-group" data-pin="gate" data-routes="heritage" transform="translate(90, 100)">
+                  <circle class="pulse-ring" r="14" fill="#c9a24b" />
+                  <circle class="pin-bg" r="9" fill="#c9a24b" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">1</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-42" y="-12" width="84" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#c9a24b" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Sun Gate</text>
+                  </g>
+                </g>
+
+                <g class="map-pin-group" data-pin="archive" data-routes="heritage" transform="translate(210, 100)">
+                  <circle class="pulse-ring" r="14" fill="#c9a24b" />
+                  <circle class="pin-bg" r="9" fill="#c9a24b" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">2</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-45" y="-12" width="90" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#c9a24b" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Archive Lane</text>
+                  </g>
+                </g>
+
+                <!-- Route 2 Pins (Craft) -->
+                <g class="map-pin-group inactive-pin" data-pin="court" data-routes="craft" transform="translate(260, 80)">
+                  <circle class="pulse-ring" r="14" fill="#5eead4" />
+                  <circle class="pin-bg" r="9" fill="#5eead4" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">1</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-48" y="-12" width="96" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#5eead4" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Courtyard</text>
+                  </g>
+                </g>
+
+                <g class="map-pin-group inactive-pin" data-pin="weavers" data-routes="craft" transform="translate(440, 100)">
+                  <circle class="pulse-ring" r="14" fill="#5eead4" />
+                  <circle class="pin-bg" r="9" fill="#5eead4" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">2</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-48" y="-12" width="96" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#5eead4" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Weavers' Lane</text>
+                  </g>
+                </g>
+
+                <g class="map-pin-group inactive-pin" data-pin="market" data-routes="craft" transform="translate(440, 220)">
+                  <circle class="pulse-ring" r="14" fill="#5eead4" />
+                  <circle class="pin-bg" r="9" fill="#5eead4" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">3</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-46" y="-12" width="92" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#5eead4" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Night Market</text>
+                  </g>
+                </g>
+
+                <!-- Shared Pin (Heritage Stop 3 / River Stop 1) -->
+                <g class="map-pin-group" data-pin="ghat" data-routes="heritage,river" transform="translate(210, 290)">
+                  <circle class="pulse-ring" r="14" fill="#c9a24b" />
+                  <circle class="pin-bg" r="9" fill="#c9a24b" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">3</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-52" y="-12" width="104" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#c9a24b" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Riverwatch Ghat</text>
+                  </g>
+                </g>
+
+                <!-- Route 3 Pins (River) -->
+                <g class="map-pin-group inactive-pin" data-pin="bridge" data-routes="river" transform="translate(360, 295)">
+                  <circle class="pulse-ring" r="14" fill="#5eead4" />
+                  <circle class="pin-bg" r="9" fill="#5eead4" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">2</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-48" y="-12" width="96" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#5eead4" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">Lantern Bridge</text>
+                  </g>
+                </g>
+
+                <g class="map-pin-group inactive-pin" data-pin="theatre" data-routes="river" transform="translate(500, 305)">
+                  <circle class="pulse-ring" r="14" fill="#5eead4" />
+                  <circle class="pin-bg" r="9" fill="#5eead4" stroke="#080b12" stroke-width="2" />
+                  <text class="pin-num" y="3" text-anchor="middle" fill="#080b12" font-size="9" font-weight="bold">3</text>
+                  <g class="pin-label-group" transform="translate(0, -16)">
+                    <rect x="-42" y="-12" width="84" height="18" rx="4" fill="#080b12" opacity="0.9" stroke="#5eead4" stroke-width="1" />
+                    <text text-anchor="middle" y="0" fill="#ede9de" font-size="10" font-weight="600">City Theatre</text>
+                  </g>
+                </g>
+              </svg>
+
+              <div class="map-overlay-info">
+                <span class="route-badge" id="routeBadge" data-md="active_route_badge">Heritage Morning Route</span>
+                <span class="route-meta" id="routeMeta" data-md="active_route_meta">2.4 km · 3 Stops · 08:00–12:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container split reveal">
+        <div>
+          <span class="eyebrow" data-md="plan_eyebrow">Plan with confidence</span>
+          <h2 data-md="plan_title">One day, paced around the city.</h2>
+        </div>
+        <div>
+          <p data-md="plan_desc">Arrive before 08:00 for the quieter Sun Gate ceremony, take lunch in the Craft Quarter between 13:00 and 14:00, and reach the riverfront before 18:30 to catch the lanterns coming on. Wear comfortable shoes: the full route covers about <span class="count-up" data-count="7.3" data-decimals="1">7.3</span> kilometres.</p>
+          <div class="facts">
+            <div><strong class="count-up" data-count="3" data-md="fact_1_num">3</strong><span data-md="fact_1_label">Timed routes</span></div>
+            <div><strong class="count-up" data-count="8" data-md="fact_2_num">8</strong><span data-md="fact_2_label">Key stops</span></div>
+            <div><strong class="count-up" data-count="7.3" data-decimals="1" data-md="fact_3_num">7.3</strong><span data-md="fact_3_label">Kilometres total</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta reveal">
+        <span class="eyebrow" data-md="cta_eyebrow">Visitor essentials</span>
+        <h2 data-md="cta_title">Start at Sun Gate. End by the river.</h2>
+        <p data-md="cta_desc">The route begins at the Old Town entrance, includes the Merchant's Courtyard for lunch, and ends at Riverwatch Ghat beside the evening lanterns.</p>
+        <div class="buttons" style="justify-content:center">
+          <a class="button primary" href="heritage.html" data-md="cta_btn_primary">Read landmark stories →</a>
+          <a class="button secondary" href="visit.html" data-md="cta_btn_secondary">See all visitor routes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <span>© 2026 Suryapur Digital Museum &amp; City Portal</span>
+      <span><a href="mailto:hello.suryapur.city@gmail.com">hello.suryapur.city@gmail.com</a> · <a href="visit.html">Visit guide</a> · <a href="gallery.html">Gallery</a></span>
+      <p class="photo-credits">Photo by <a href="https://unsplash.com/@lucabravo" rel="noopener">Luca Bravo</a> — via <a href="https://unsplash.com/license" rel="noopener">Unsplash</a> (free to use).</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
